@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRototype - Political Campaigning Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d;
+            color: #f0f0f0;
+        }
+        .page-content {
+            display: none;
+            min-height: calc(100vh - 80px); /* Adjust for header height */
+            padding-top: 80px;
+        }
+        .page-content.active {
+            display: block;
+        }
+        .nav-link.active {
+            color: #d1d5db;
+        }
+        .target-svg {
+            width: 150px;
+            height: 150px;
+        }
+        .member-card {
+            border: 1px solid #333;
+            background-color: #1a1a1a;
+        }
+        .module-item {
+            border-left: 4px solid #4a90e2;
+        }
+        .target-audience-card {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+        .target-audience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#0d0d0d] bg-opacity-90 backdrop-blur-md shadow-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-3xl font-bold flex items-center" onclick="showPage('home')">
+                <span class="text-white">PR</span><span class="text-[#f0f0f0]">o</span><span class="text-white">totype</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#home" class="nav-link transition-colors duration-300 hover:text-gray-400" onclick="showPage('home')">Home</a>
+                <a href="#about" class="nav-link transition-colors duration-300 hover:text-gray-400" onclick="showPage('about')">About Us</a>
+                <a href="#expertise" class="nav-link transition-colors duration-300 hover:text-gray-400" onclick="showPage('expertise')">Expertise</a>
+                <a href="#clients" class="nav-link transition-colors duration-300 hover:text-gray-400" onclick="showPage('clients')">Clients</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-400 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#1a1a1a] shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700" onclick="showPage('home')">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700" onclick="showPage('about')">About Us</a>
+                <a href="#expertise" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700" onclick="showPage('expertise')">Expertise</a>
+                <a href="#clients" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700" onclick="showPage('clients')">Clients</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700" onclick="showPage('contact')">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <main id="home" class="page-content active container mx-auto px-6 py-24 flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white mb-4">
+                <span class="block">A POLITICAL CAMPAIGNING AGENCY</span>
+                <br>
+                <span class="block mt-2">PRototype</span>
+            </h1>
+            <p class="text-lg md:text-xl font-medium text-gray-400">
+                CAMPAIGNS THAT COMMAND
+            </p>
+            <div class="mt-8">
+                <a href="#contact" class="bg-gray-800 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-700 transition duration-300 transform hover:scale-105">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+            <img src="\PTPT2.png" alt="This is a logo!">
+        </div>
+    </main>
+
+    <!-- About Us Page -->
+    <main id="about" class="page-content container mx-auto px-6 py-24">
+        <h2 class="text-4xl font-bold text-center mb-12">About Us</h2>
+        <div class="bg-[#1a1a1a] p-8 md:p-12 rounded-lg shadow-xl mb-12">
+            <h3 class="text-3xl font-semibold mb-6 text-gray-200">Our Goals</h3>
+            <div class="space-y-6 text-lg text-gray-300">
+                <div class="flex items-start">
+                    <span class="text-xl mr-4">&#x2022;</span>
+                    <p>
+                        Youth to Senior Connect (18+ years): We craft campaigns that appeal to both first-time voters and experienced electorates. We cater to political parties, organizations, and leaders across all spectrums.
+                    </p>
+                </div>
+                <div class="flex items-start">
+                    <span class="text-xl mr-4">&#x2022;</span>
+                    <p>
+                        Digital + On-ground synergy: We are experts at blending physical campaigning with cutting-edge digital strategies. Our approach optimizes voter outreach through personalized digital content and a strong field presence.
+                    </p>
+                </div>
+                <div class="flex items-start">
+                    <span class="text-xl mr-4">&#x2022;</span>
+                    <p>
+                        Nationwide Footprint: We aim to expand our operations beyond metro cities and become the go-to agency for both local leaders and national parties.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-[#1a1a1a] p-8 md:p-12 rounded-lg shadow-xl">
+            <h3 class="text-3xl font-semibold mb-8 text-gray-200 text-center">Our Members</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="member-card p-6 rounded-lg text-center">
+                    <p class="font-bold text-xl text-white">Sheldon Fleming</p>
+                    <p class="text-sm text-gray-400 mt-2">Chief Executive Officer</p>
+                </div>
+                <div class="member-card p-6 rounded-lg text-center">
+                    <p class="font-bold text-xl text-white">Shlok Kishore</p>
+                    <p class="text-sm text-gray-400 mt-2">COO & Head of Marketing</p>
+                </div>
+                <div class="member-card p-6 rounded-lg text-center">
+                    <p class="font-bold text-xl text-white">Samhita Das</p>
+                    <p class="text-sm text-gray-400 mt-2">Chief Finance Officer</p>
+                </div>
+                <div class="member-card p-6 rounded-lg text-center">
+                    <p class="font-bold text-xl text-white">Somraji Sengupta</p>
+                    <p class="text-sm text-gray-400 mt-2">Creative Director</p>
+                </div>
+                <div class="member-card p-6 rounded-lg text-center">
+                    <p class="font-bold text-xl text-white">Adwaith K Umesh</p>
+                    <p class="text-sm text-gray-400 mt-2">Copy & Communication Analyst</p>
+                </div>
+                <div class="member-card p-6 rounded-lg text-center">
+                    <p class="font-bold text-xl text-white">Vidit Kaushik</p>
+                    <p class="text-sm text-gray-400 mt-2">Public Relations Strategist</p>
+                </div>
+                <div class="member-card p-6 rounded-lg text-center">
+                    <p class="font-bold text-xl text-white">Aditya Mishra</p>
+                    <p class="text-sm text-gray-400 mt-2">Digital Content Manager</p>
+                </div>
+                <div class="member-card p-6 rounded-lg text-center">
+                    <p class="font-bold text-xl text-white">Stephen Fernandes</p>
+                    <p class="text-sm text-gray-400 mt-2">Crisis Manager</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Expertise Page -->
+    <main id="expertise" class="page-content container mx-auto px-6 py-24">
+        <h2 class="text-4xl font-bold text-center mb-12">Our Expertise</h2>
+        <div class="bg-[#1a1a1a] p-8 md:p-12 rounded-lg shadow-xl mb-12">
+            <h3 class="text-3xl font-semibold mb-6 text-gray-200">Our Strategic Approach</h3>
+            <p class="text-lg text-gray-300">
+                At PRototype, our style is defined by a strategic and results-oriented approach. We believe in data-driven decision-making combined with a deep understanding of human behavior and political landscapes. Our approach is inherently hybrid, leveraging both cutting-edge digital strategies and robust on-ground activation to ensure maximum impact.
+            </p>
+        </div>
+
+        <div class="bg-[#1a1a1a] p-8 md:p-12 rounded-lg shadow-xl">
+            <h3 class="text-3xl font-semibold mb-8 text-gray-200 text-center">Our Campaign Modules & Steps</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="module-item bg-[#1f1f1f] p-6 rounded-lg shadow-inner">
+                    <h4 class="text-xl font-semibold text-gray-100">Strategy & Research</h4>
+                    <p class="text-sm text-gray-400 mt-2">We conduct in-depth analysis to inform our campaign objectives.</p>
+                </div>
+               
+                <div class="module-item bg-[#1f1f1f] p-6 rounded-lg shadow-inner">
+                    <h4 class="text-xl font-semibold text-gray-100">Content Creation</h4>
+                    <p class="text-sm text-gray-400 mt-2">We develop compelling narratives and diverse content for all platforms.</p>
+                </div>
+                     <div class="module-item bg-[#1f1f1f] p-6 rounded-lg shadow-inner">
+                    <h4 class="text-xl font-semibold text-gray-100">Data & Analytics</h4>
+                    <p class="text-sm text-gray-400 mt-2">We continuously monitor performance and optimize strategies for maximum impact.</p>
+                </div>
+                <div class="module-item bg-[#1f1f1f] p-6 rounded-lg shadow-inner">
+                    <h4 class="text-xl font-semibold text-gray-100">Digital Outreach</h4>
+                    <p class="text-sm text-gray-400 mt-2">We implement SEO, social media management, and targeted digital advertising.</p>
+                </div>
+                <div class="module-item bg-[#1f1f1f] p-6 rounded-lg shadow-inner">
+                    <h4 class="text-xl font-semibold text-gray-100">On-Ground Mobilization</h4>
+                    <p class="text-sm text-gray-400 mt-2">We organize grassroots events, voter outreach, and community engagement.</p>
+                </div>
+                <div class="module-item bg-[#1f1f1f] p-6 rounded-lg shadow-inner">
+                    <h4 class="text-xl font-semibold text-gray-100">Media & PR</h4>
+                    <p class="text-sm text-gray-400 mt-2">We manage media interactions and ensure positive public relations.</p>
+                </div>
+            
+                <div class="module-item bg-[#1f1f1f] p-6 rounded-lg shadow-inner">
+                    <h4 class="text-xl font-semibold text-gray-100">Crisis Management</h4>
+                    <p class="text-sm text-gray-400 mt-2">We proactively address challenges and maintain a strong public image.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Target Audience/Clients Page -->
+    <main id="clients" class="page-content container mx-auto px-6 py-24">
+        <h2 class="text-4xl font-bold text-center mb-12">Our Clients</h2>
+        <div class="bg-[#1a1a1a] p-8 md:p-12 rounded-lg shadow-xl">
+            <h3 class="text-3xl font-semibold mb-8 text-gray-200 text-center">Who We Work With</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="target-audience-card p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold mb-2">Political Organizations</h4>
+                    <p class="text-gray-400">Political organizations and parties seeking to run effective, modern campaigns.</p>
+                </div>
+                <div class="target-audience-card p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold mb-2">Grassroots Movements</h4>
+                    <p class="text-gray-400">Local and regional initiatives requiring outreach, mobilization, and campaign strategies.</p>
+                </div>
+                <div class="target-audience-card p-6 rounded-lg shadow-sm">
+                    <h4 class="text-xl font-semibold mb-2">Civil Advocacy Associations</h4>
+                    <p class="text-gray-400">Civil advocacy associations requiring strategic communication and political outreach.</p>
+                </div>
+                <div class="target-audience-card p-6 rounded-lg shadow-sm col-span-1 sm:col-span-2 lg:col-span-3 text-center">
+                    <h4 class="text-xl font-semibold mb-2">And more...</h4>
+                    <p class="text-gray-400">
+                        We work with a diverse range of clients and other related entities requiring strategic communication and political outreach.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+  <!-- Contact Page -->
+<main id="contact" 
+      class="page-content min-h-screen flex items-center justify-center px-6 py-12">
+    <div class="w-full max-w-2xl bg-[#1a1a1a] p-8 md:p-12 rounded-lg shadow-xl text-center">
+        <h2 class="text-4xl font-bold mb-4 text-gray-100">Contact Us</h2>
+        <p class="text-lg text-gray-400 mb-8">
+            Ready to command your next campaign? Get in touch with us.
+        </p>
+        <div class="flex flex-col items-center mb-8 space-y-4">
+            <p class="text-xl font-semibold text-gray-200">Email:</p>
+            <a href="mailto:contact@prototype.com" class="text-blue-400 hover:underline">contact@prototype.com</a>
+            <p class="text-xl font-semibold text-gray-200">Instagram:</p>
+            <a href="https://www.instagram.com/pr_ototype" target="_blank" class="text-blue-400 hover:underline">@pr_ototype</a>
+        </div>
+
+        <!-- Form -->
+        <form id="contact-form" class="w-full max-w-lg mx-auto space-y-6">
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
+                <input type="text" id="name" name="name"
+                       class="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white 
+                              focus:border-blue-500 focus:ring-blue-500 shadow-sm transition duration-300"
+                       placeholder="Your Name">
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
+                <input type="email" id="email" name="email"
+                       class="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white 
+                              focus:border-blue-500 focus:ring-blue-500 shadow-sm transition duration-300"
+                       placeholder="your.email@example.com">
+            </div>
+            <div>
+                <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
+                <textarea id="message" name="message" rows="4"
+                          class="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white 
+                                 focus:border-blue-500 focus:ring-blue-500 shadow-sm transition duration-300"
+                          placeholder="How can we help?"></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit"
+                        class="bg-gray-800 text-white font-semibold py-3 px-6 rounded-full shadow-lg 
+                               hover:bg-gray-700 transition duration-300 transform hover:scale-105">
+                    Send Message
+                </button>
+            </div>
+            <div id="form-message" class="mt-4 text-center"></div>
+        </form>
+    </div>
+</main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 text-center py-6">
+        <p>&copy; 2025 PRototype. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple page navigation logic
+        const pages = ['home', 'about', 'expertise', 'clients', 'contact'];
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function showPage(pageId) {
+            pages.forEach(id => {
+                const page = document.getElementById(id);
+                if (page) {
+                    page.classList.remove('active');
+                }
+            });
+            const activePage = document.getElementById(pageId);
+            if (activePage) {
+                activePage.classList.add('active');
+            }
+            updateActiveLink(pageId);
+            // Close mobile menu after selection
+            mobileMenu.classList.add('hidden');
+        }
+
+        function updateActiveLink(pageId) {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === pageId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('home'); // Show home page on initial load
+
+            // Handle mobile menu toggle
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Contact form message handling
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const formMessage = document.getElementById('form-message');
+                    formMessage.innerHTML = '<p class="text-green-500 font-semibold mt-4">Thank you for your message! We will get back to you shortly.</p>';
+                    contactForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
